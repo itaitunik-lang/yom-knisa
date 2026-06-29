@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>יום כניסה לבעלי תפקידים חדשים · 27.07.2026</title>
+
+  <!-- WhatsApp / social preview card -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="יום כניסה לבעלי תפקידים חדשים · 27.07.2026">
+  <meta property="og:description" content="לחצו להוספת היום ליומן 📅">
+  <meta property="og:image" content="https://itaitunik-lang.github.io/yom-knisa/yom-knisa.png">
+  <meta property="og:url" content="https://itaitunik-lang.github.io/yom-knisa/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="יום כניסה לבעלי תפקידים חדשים · 27.07.2026">
+  <meta name="twitter:image" content="https://itaitunik-lang.github.io/yom-knisa/yom-knisa.png">
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { min-height: 100%; }
+    body {
+      background: #f3ecd9;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      padding: 16px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    .wrap { width: 100%; max-width: 480px; text-align: center; }
+    .card {
+      display: block;
+      line-height: 0;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.18);
+      cursor: pointer;
+      -webkit-tap-highlight-color: transparent;
+    }
+    .card img { width: 100%; height: auto; display: block; }
+    .btn {
+      display: inline-block;
+      margin-top: 22px;
+      padding: 15px 34px;
+      font-size: 18px;
+      font-weight: 600;
+      color: #fff;
+      background: #2d4a2b;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(45,74,43,0.4);
+      transition: transform .08s ease, background .15s ease;
+    }
+    .btn:hover { background: #213c20; }
+    .btn:active { transform: scale(0.97); }
+    .sub { margin-top: 14px; color: #6b6b5a; font-size: 14px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <a class="card" id="card" href="#" role="button" aria-label="הוספת יום הכניסה ליומן">
+      <img src="yom-knisa.png" alt="יום כניסה לבעלי תפקידים חדשים · 27.07.2026">
+    </a>
+    <br>
+    <button class="btn" id="btn">הוספה ליומן 📅</button>
+    <div class="sub">יום כניסה לבעלי תפקידים חדשים · 27.07.2026 · בא"פ לכיש</div>
+  </div>
+
+  <script>
+    var EVENT_TITLE = "יום כניסה לבעלי תפקידים חדשים";
+    var LOCATION    = 'בא"פ לכיש';
+    var DT_START    = "20260727T090000";
+    var DT_END      = "20260727T164500";
+
+    var AGENDA = [
+      "09:00  התכנסות וקפה",
+      "09:30  מבנה הבא\"פ, יעוד, חזון ויעדים",
+      "10:45  התרעננות",
+      "11:00  עמ\"טים ופרויקטים מרכזיים",
+      "12:30  ארוחת צהריים חגיגית",
+      "13:30  גרף הבא\"פ ועקרונות לתכנון",
+      "14:15  בטיחות באימונים וניהול שטח אש הבא\"פ",
+      "15:00  סיור שטח",
+      "16:00  סיכום מפקד"
+    ].join("\n");
+
+    function googleUrl() {
+      var p = new URLSearchParams({
+        action: "TEMPLATE",
+        text: EVENT_TITLE,
+        dates: DT_START + "/" + DT_END,
+        details: AGENDA,
+        location: LOCATION,
+        ctz: "Asia/Jerusalem"
+      });
+      return "https://calendar.google.com/calendar/render?" + p.toString();
+    }
+
+    function addToCalendar() {
+      window.open(googleUrl(), "_blank", "noopener");
+    }
+
+    document.getElementById("card").addEventListener("click", function (e) {
+      e.preventDefault(); addToCalendar();
+    });
+    document.getElementById("btn").addEventListener("click", addToCalendar);
+  </script>
+</body>
+</html>
